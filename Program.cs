@@ -7,8 +7,10 @@ namespace GeneralProgramForCodeLouisville
     {
         static void Main(string[] args)
         {
+            Console.Write("Enter a number between 1-10 to produce an alphabet that increments by the number you provide: ");
+            string userInput = Console.ReadLine();
             Console.WriteLine(RenderAlphabetQuicker());
-            Console.WriteLine(RenderAlphabetSkipped());
+            Console.WriteLine(RenderAlphabetSkipped(userInput));
             Console.WriteLine(RenderAlphabetBackwards());
         }
         private static string RenderAlphabetQuicker()
@@ -21,15 +23,13 @@ namespace GeneralProgramForCodeLouisville
 
             return sb.ToString();
         }
-        private static string RenderAlphabetSkipped()
+        private static string RenderAlphabetSkipped(string userInput)
         {
+            int userInputFixed = Convert.ToInt32(userInput);
             StringBuilder alphabetString = new StringBuilder();
-            char letter = 'A';
-            while (letter <= 'Z')
+            for (char letter = 'A'; letter <= 'Z'; letter = (char)(letter + userInputFixed))
             {
                 alphabetString.Append(letter);
-                letter++;
-                letter++;
             }
             return alphabetString.ToString();
         }

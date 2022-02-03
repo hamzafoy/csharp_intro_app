@@ -12,7 +12,7 @@ namespace GeneralProgramForCodeLouisville
             string userChoiceToRender = null;
             do
             {
-                Console.Write("Type 1 to render alphabet A to Z, \ntype 2 to render alphabet Z to A, \ntype 3 to pick how many letters are skipped in rendering the alphabet, \nhit the [SPACEBAR] to exit the program:  ");
+                Console.Write("Type 1 to render alphabet A to Z\nType 2 to render alphabet Z to A\nType 3 to pick how many letters are skipped in rendering the alphabet\nHit the [SPACEBAR] to exit the program:  ");
                 if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
                 {
                     //Spacebar press will utilize break to end the program.

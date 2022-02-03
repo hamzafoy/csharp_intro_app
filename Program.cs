@@ -7,13 +7,15 @@ namespace GeneralProgramForCodeLouisville
     {
         static void Main(string[] args)
         {
+            //Setting variable to store User's numerical choice to pick rendering option to null outside the do-while loop
+            //in order to access it for the `while` condition.
             string userChoiceToRender = null;
-            //Console.WriteLine(Console.ReadKey(true).Key);
             do
             {
                 Console.Write("Type 1 to render alphabet A to Z, \ntype 2 to render alphabet Z to A, \ntype 3 to pick how many letters are skipped in rendering the alphabet, \nhit the [SPACEBAR] to exit the program:  ");
                 if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
                 {
+                    //Spacebar press will utilize break to end the program.
                     break;
                 }
                 userChoiceToRender = Console.ReadLine();
@@ -22,6 +24,7 @@ namespace GeneralProgramForCodeLouisville
                 {
                     Console.WriteLine("How many letters do you want to skip in rendering the alphabet?");
                     skippedLettersInput = Console.ReadLine();
+                    //Ensures the program doesn't break if one were to prematurely press ENTER without submitting a response to the prompt.
                     skippedLettersInput = (skippedLettersInput != "") ? skippedLettersInput : "1";
                 }
                 int userChoiceNumber = (userChoiceToRender != "") ? Convert.ToInt32(userChoiceToRender) : 1;

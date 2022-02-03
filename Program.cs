@@ -9,23 +9,22 @@ namespace GeneralProgramForCodeLouisville
         {
             Console.Write("Enter a number between 1-10 to produce an alphabet that increments by the number you provide: ");
             string userInput = Console.ReadLine();
+            int userInputFixed = Convert.ToInt32(userInput = "1");
             Console.WriteLine(RenderAlphabetQuicker());
-            Console.WriteLine(RenderAlphabetSkipped(userInput));
+            Console.WriteLine(RenderAlphabetSkipped(userInputFixed));
             Console.WriteLine(RenderAlphabetBackwards());
         }
         private static string RenderAlphabetQuicker()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder alphabetString = new StringBuilder();
             for (char letter = 'A'; letter <= 'Z'; letter++)
             {
-                sb.Append(letter);
+                alphabetString.Append(letter);
             }
-
-            return sb.ToString();
+            return alphabetString.ToString();
         }
-        private static string RenderAlphabetSkipped(string userInput)
+        private static string RenderAlphabetSkipped(int? userInputFixed = 1)
         {
-            int userInputFixed = Convert.ToInt32(userInput);
             StringBuilder alphabetString = new StringBuilder();
             for (char letter = 'A'; letter <= 'Z'; letter = (char)(letter + userInputFixed))
             {

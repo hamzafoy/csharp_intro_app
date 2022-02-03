@@ -22,7 +22,7 @@ namespace GeneralProgramForCodeLouisville
                 string skippedLettersInput = "1";
                 if (userChoiceToRender == "3")
                 {
-                    Console.WriteLine("How many letters do you want to skip in rendering the alphabet?");
+                    Console.WriteLine("How many letters do you want to skip when rendering the alphabet?");
                     skippedLettersInput = Console.ReadLine();
                     //Ensures the program doesn't break if one were to prematurely press ENTER without submitting a response to the prompt.
                     skippedLettersInput = (skippedLettersInput != "") ? skippedLettersInput : "1";

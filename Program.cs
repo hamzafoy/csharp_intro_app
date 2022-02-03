@@ -7,12 +7,29 @@ namespace GeneralProgramForCodeLouisville
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a number between 1-10 to produce an alphabet that increments by the number you provide: ");
-            string userInput = Console.ReadLine();
-            int userInputFixed = Convert.ToInt32(userInput = "1");
-            Console.WriteLine(RenderAlphabetQuicker());
-            Console.WriteLine(RenderAlphabetSkipped(userInputFixed));
-            Console.WriteLine(RenderAlphabetBackwards());
+            Console.Write("Type 1 to render alphabet A to Z, type 2 to render alphabet Z to A: ");
+            string userChoiceToRender = Console.ReadLine();
+            Console.WriteLine(RenderUserChosenAlphabet(userChoiceToRender = "1"));
+        }
+        private static string RenderUserChosenAlphabet(string choice)
+        {
+            StringBuilder alphabetString = new StringBuilder();
+            switch(choice)
+            {
+                case "1":
+                    for(char letter = 'A'; letter <= 'Z'; letter++)
+                    {
+                        alphabetString.Append(letter);
+                    }
+                    break;
+                case "2":
+                    for(char letter = 'Z'; letter >= 'A'; letter--)
+                    {
+                        alphabetString.Append(letter);
+                    }
+                    break;
+            }
+            return alphabetString.ToString();
         }
         private static string RenderAlphabetQuicker()
         {

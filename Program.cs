@@ -7,21 +7,29 @@ namespace GeneralProgramForCodeLouisville
     {
         static void Main(string[] args)
         {
-            Console.Write("Type 1 to render alphabet A to Z, \ntype 2 to render alphabet Z to A, \ntype 3 to pick how many letters are skipped in rendering the alphabet: ");
-            string userChoiceToRender = Console.ReadLine();
-            Console.WriteLine(userChoiceToRender);
-            string skippedLettersInput = "1";
-            if (userChoiceToRender == "3")
+            string userChoiceToRender = null;
+            //Console.WriteLine(Console.ReadKey(true).Key);
+            do
             {
-                Console.WriteLine("How many letters do you want to skip in rendering the alphabet?");
-                skippedLettersInput = Console.ReadLine();
-                skippedLettersInput = (skippedLettersInput != "") ? skippedLettersInput : "1";
-            }
-            int userChoiceNumber = (userChoiceToRender != "") ? Convert.ToInt32(userChoiceToRender) : 1;
-            int skippedLettersNumber = int.Parse(skippedLettersInput);
-            Console.WriteLine(RenderUserChosenAlphabet(userChoiceNumber, skippedLettersNumber));
+                Console.Write("Type 1 to render alphabet A to Z, \ntype 2 to render alphabet Z to A, \ntype 3 to pick how many letters are skipped in rendering the alphabet, \nhit the [SPACEBAR] to exit the program:  ");
+                if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
+                {
+                    break;
+                }
+                userChoiceToRender = Console.ReadLine();
+                string skippedLettersInput = "1";
+                if (userChoiceToRender == "3")
+                {
+                    Console.WriteLine("How many letters do you want to skip in rendering the alphabet?");
+                    skippedLettersInput = Console.ReadLine();
+                    skippedLettersInput = (skippedLettersInput != "") ? skippedLettersInput : "1";
+                }
+                int userChoiceNumber = (userChoiceToRender != "") ? Convert.ToInt32(userChoiceToRender) : 1;
+                int skippedLettersNumber = int.Parse(skippedLettersInput);
+                Console.WriteLine(RenderUserChosenAlphabet(userChoiceNumber, skippedLettersNumber));
+            } while (userChoiceToRender != null);
         }
-        private static string RenderUserChosenAlphabet(int choice = 1, int skip = 1)
+        private static string RenderUserChosenAlphabet(int choice, int skip)
         {
             StringBuilder alphabetString = new StringBuilder();
             switch(choice)

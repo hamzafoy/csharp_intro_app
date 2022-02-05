@@ -15,8 +15,9 @@ namespace GeneralProgramForCodeLouisville
             {
                 Console.Write("Type 1 to render alphabet A to Z\nType 2 to render alphabet Z to A\nType 3 to pick how many letters are skipped in rendering the alphabet\nType ESC to exit the program:  ");
                 userChoiceToRender = Console.ReadLine();
-                if (userChoiceToRender == "ESC")
+                if (userChoiceToRender == "ESC" || char.IsLetter(userChoiceToRender[0]))
                 {
+                    Console.WriteLine("You have exited the program or entered an improper input, goodbye!");
                     break;
                 }
                 int userChoiceNumber = (userChoiceToRender != "") ? Convert.ToInt32(userChoiceToRender) : 1;
